@@ -1,0 +1,85 @@
+{
+  "_comment": "APEX LIQUIDITY AI — Configuração em tempo real. Editável pelo dashboard.",
+
+  "indicadores": {
+    "RSI_WEIGHT":       0.15,
+    "MACD_WEIGHT":      0.15,
+    "ADX_WEIGHT":       0.12,
+    "ATR_WEIGHT":       0.08,
+    "VOLUME_WEIGHT":    0.10,
+    "VWAP_WEIGHT":      0.10,
+    "BB_WEIGHT":        0.08,
+    "LIQUIDITY_WEIGHT": 0.12,
+    "NEWS_WEIGHT":      0.05,
+    "MA_WEIGHT":        0.05
+  },
+
+  "medias_moveis": {
+    "SMA_SHORT": 9,
+    "SMA_LONG":  21,
+    "EMA_SHORT": 9,
+    "EMA_LONG":  21,
+    "EMA_TREND": 200,
+    "MA_CROSS_STRATEGY":  true,
+    "MA_TREND_FILTER":    true,
+    "MA_CONFIRMATION":    true
+  },
+
+  "estrategia": {
+    "ENTRY_SENSITIVITY":       0.65,
+    "CONFIRMATION_THRESHOLD":  4,
+    "MARKET_FILTER":           true,
+    "VOLATILITY_FILTER":       true,
+    "MIN_SCORE_BUY":           4,
+    "MIN_SCORE_SELL":         -4,
+    "LOOP_INTERVAL":           15
+  },
+
+  "risco": {
+    "RISK_PER_TRADE":           1.0,
+    "MAX_DRAWDOWN":             8.0,
+    "MAX_LOSS_DAY":             3.0,
+    "MAX_CONSECUTIVE_LOSSES":   4,
+    "MAX_OPEN_TRADES":          3
+  },
+
+  "execucao": {
+    "AUTO_TRADING":       false,
+    "TELEGRAM_ENABLED":   true,
+    "TIMEFRAME":          "H1",
+    "SLIPPAGE_MAX":       3
+  },
+
+  "ia": {
+    "AUTO_LEARNING":      true,
+    "LEARNING_RATE":      0.01,
+    "ADAPTATION_SPEED":   0.3,
+    "MEMORY_WEIGHT":      0.7,
+    "ML_ENABLED":         true,
+    "RETRAIN_INTERVAL":   86400
+  },
+
+  "ativos": {
+    "EURUSD":  { "active": true,  "risk_mult": 1.0, "type": "forex",  "magic": 100001, "session": ["LONDON","NEW_YORK"], "sl_mult": 1.5, "tp_mult": 3.0 },
+    "XAUUSD":  { "active": true,  "risk_mult": 1.2, "type": "forex",  "magic": 100002, "session": ["LONDON","NEW_YORK"], "sl_mult": 2.0, "tp_mult": 4.0 },
+    "SP500":   { "active": true,  "risk_mult": 1.0, "type": "index",  "magic": 100003, "session": ["NEW_YORK"],           "sl_mult": 2.0, "tp_mult": 4.0 },
+    "NAS100":  { "active": true,  "risk_mult": 1.0, "type": "index",  "magic": 100004, "session": ["NEW_YORK"],           "sl_mult": 2.0, "tp_mult": 4.0 },
+    "US30":    { "active": false, "risk_mult": 0.8, "type": "index",  "magic": 100005, "session": ["NEW_YORK"],           "sl_mult": 2.0, "tp_mult": 4.0 },
+    "BTCUSDT": { "active": true,  "risk_mult": 0.8, "type": "crypto", "magic": 100006, "session": ["ASIA","LONDON","NEW_YORK"], "sl_mult": 2.5, "tp_mult": 5.0 },
+    "ETHUSDT": { "active": false, "risk_mult": 0.7, "type": "crypto", "magic": 100007, "session": ["ASIA","LONDON","NEW_YORK"], "sl_mult": 2.5, "tp_mult": 5.0 }
+  },
+
+  "smart_money": {
+    "DETECT_LIQUIDITY_SWEEPS": true,
+    "DETECT_STOP_HUNTS":       true,
+    "DETECT_ORDER_BLOCKS":     true,
+    "DETECT_BOS":              true,
+    "MIN_SWEEP_PCT":           0.0015
+  },
+
+  "sessoes": {
+    "ASIA":     { "start_utc": 0,  "end_utc": 7  },
+    "LONDON":   { "start_utc": 7,  "end_utc": 12 },
+    "NEW_YORK": { "start_utc": 12, "end_utc": 21 }
+  }
+}
