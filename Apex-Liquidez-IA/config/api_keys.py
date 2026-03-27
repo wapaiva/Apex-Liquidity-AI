@@ -22,13 +22,13 @@ NEWS_API_KEY = "COLE_AQUI"
 
 # Finnhub — dados alternativos e notícias
 # https://finnhub.io → Dashboard
-FINNHUB_API_KEY = "COLE_AQUI"
+FINNHUB_API_KEY = os.getenv("FINNHUB_API_KEY", "d73f3p9r01qjjol2radgd73f3p9r01qjjol2rae0")
 
 # Telegram — alertas e sinais em tempo real
 # @BotFather → /newbot → copie o token
-TELEGRAM_BOT_TOKEN = "COLE_AQUI"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8347200645:AAEN1Glp-99lPfPAdtaIVxdAfEMSo7BEjcI")
 # @userinfobot → envie /start → copie o chat_id
-TELEGRAM_CHAT_ID = "COLE_AQUI"
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "-1003745581937")
 
 # ============================================================
 #  CONFIGURAÇÕES DO MT5 BRIDGE
