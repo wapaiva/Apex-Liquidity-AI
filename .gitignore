@@ -1,0 +1,35 @@
+# ============================================================
+#  APEX LIQUIDITY AI — .gitignore
+#  Arquivos que NUNCA devem ir para o GitHub
+# ============================================================
+
+# Chaves e segredos — NUNCA subir!
+.env
+*.env
+config/api_keys_local.py
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Dados e logs
+data/
+*.log
+logs/
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
