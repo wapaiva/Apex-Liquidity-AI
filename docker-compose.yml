@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  fastapi:
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
+    volumes:
+      - .:/app
+    ports:
+      - "8000:80"
+    environment:
+      - MODULE_NAME=app.main
+      - VARIABLE_NAME=app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 80 --reload
+  
+networks:
+  default:
+    name: fastapi-network
+  
+# Use the created network for the service
+networks:
+  fastapi-network:
+    driver: bridge
